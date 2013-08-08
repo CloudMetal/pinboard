@@ -7,6 +7,8 @@ var Pin = require('./pin');
 var PinView = require('./pin-view');
 var ModalView = require('./modal-view');
 
+console.log('WORKING');
+
 // Setting options for the child window
 var options = [
   'toolbars=0',
