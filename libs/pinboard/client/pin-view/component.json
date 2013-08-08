@@ -1,0 +1,12 @@
+{
+  "name": "pin-view",
+  "description": "Pin view",
+  "version": "0.0.1",
+  "dependencies": {
+    "component/domify": "*",
+    "component/reactive": "*",
+    "component/emitter": "*"
+  },
+  "scripts": ["index.js", "template.js"],
+  "styles": ["styles.css"]
+}

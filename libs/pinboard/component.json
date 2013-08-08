@@ -1,0 +1,11 @@
+{
+  "name": "frog-pinterest",
+  "description": "Pinterest like app",
+  "version": "0.0.1",
+  "local": [
+    "boot"
+  ],
+  "paths": [
+    "client"
+  ]
+}

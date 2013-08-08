@@ -1,0 +1,9 @@
+{
+  "name": "pin",
+  "description": "Pin model",
+  "version": "0.0.1",
+  "dependencies": {
+    
+  },
+  "scripts": ["index.js"]
+}

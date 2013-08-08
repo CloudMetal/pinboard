@@ -1,0 +1,15 @@
+{
+  "name": "boot",
+  "description": "Main entry point for our client side app",
+  "version": "0.0.1",
+  "dependencies": {
+    "component/domify": "*",
+    "visionmedia/superagent": "*"
+  },
+  "scripts": ["index.js", "template.js"],
+  "styles": ["styles.css"],
+  "local": [
+    "pin",
+    "pin-view"
+  ]
+}

@@ -1,0 +1,1 @@
+module.exports = '<div class="pin">\n  <a data-href="url" target="_blank">\n    <img data-src="thumbnailUrl"/>\n  </a>\n  <div class="detail-container">\n    <span data-text="description"></span>\n    <a data-href="url" class="site-link" data-text="url"></a>\n  </div>\n\n</div>\n';

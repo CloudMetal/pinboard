@@ -1,0 +1,1 @@
+module.exports = '<li>\n  <img class="media-item" data-js-action="select" src="{{src}}"/>\n</li>\n';

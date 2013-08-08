@@ -1,0 +1,15 @@
+body, html {
+  background: rgba(87, 173, 48, 1);
+  color:#444;
+  font-family: "Proxima Nova Light", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size:20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  overflow: hidden;
+  padding: 80px 90px;
+}

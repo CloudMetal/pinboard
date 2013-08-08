@@ -1,0 +1,27 @@
+.pin {
+  background: #fff;
+  margin: 10px 8px;
+  overflow: hidden;
+  width: 298px;
+  }
+
+  .pin img {
+    height: auto;
+    width: 100%;
+    }
+
+  .pin span,
+  .pin a.site-link {
+    display: block;
+    padding: 15px 20px 20px 20px;
+    }
+  .pin a.site-link {
+    color: #ccc;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-top: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    word-wrap: break-word;
+  }

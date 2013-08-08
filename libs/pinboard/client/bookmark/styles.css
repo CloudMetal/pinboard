@@ -1,0 +1,137 @@
+#frog-pinterest-modal {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 10000000000;
+}
+
+#frog-pinterest-modal,
+#frog-pinterest-modal * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#frog-pinterest-modal:before {
+  background: rgba(255,255,255,0.7);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+#frog-pinterest-modal h1 {
+  float: left;
+  display: block;
+  font-size: 20px;
+  padding: 0 84px 84px 0;
+}
+
+#frog-pinterest-modal header {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+#frog-pinterest-modal h1 {
+  font-weight: 100;
+  color: #fff;
+  padding: 12px 13px 12px 25px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px #000;
+}
+
+.media-item {
+  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.3);
+  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.3);
+  box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.3);
+}
+
+.media-control {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  bottom: 0;
+  padding: 9px 13px 13px 13px;
+}
+
+.media-control a {
+  position: absolute;
+  right: 0;
+}
+
+.media-name {
+  background: none;
+  border: none;
+  font-size: 21px;
+  color: #4b4b4b;
+  text-transform: capitalize;
+}
+
+.domainName{
+  color: #E71D1D;
+  display: block;
+  font-size: 15px;
+  margin-top: 1px;
+}
+
+#frog-pinterest-image-list {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  overflow: visible;
+  padding: 15px;
+  line-height: 0
+}
+
+#frog-pinterest-image-list li {
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  float: left;
+  position: relative;
+}
+
+#frog-pinterest-image-list li img {
+  width: 100%;
+}
+
+.frog-pinterest-nano-button {
+  border-left: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 0 1px #000000;
+  color: #fff;
+  font-size: 15px;
+  line-height: 44px;
+  padding: 28px 18px;
+  text-shadow: 0 1px 2px #000;
+}
+
+#frog-pinterest-modal footer {
+  left: 0;
+  padding: 0 20px 20px;
+  position: absolute;
+  text-align:right;
+  top: 0;
+  z-index: 100;
+}
+
+#frog-pinterest-modal footer a {
+  background: #d4ecfb;
+  border: 1px solid #78c3f1;
+  color: #000;
+  display: inline-block;
+  margin-left: 20px;
+  padding: 4px 10px;
+  text-decoration: none;
+}
