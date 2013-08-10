@@ -204,7 +204,7 @@ javascript: (function (){
     position: fixed; \
     top: 0; \
     width: 100%; \
-    z-index: 10000000000; \
+    z-index: 1000000000000; \
   } \
   #frog-pinterest-modal-mask { \
     width: 100%; \
