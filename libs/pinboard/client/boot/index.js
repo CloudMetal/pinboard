@@ -19,7 +19,7 @@ var container = document.querySelector('#container');
 var pckry;
 
 request
-  .get('data/pins.json')
+  .get('/pinboard/data/pins.json')
   .end(function(res){
     createPins(res.body.pins);
   });

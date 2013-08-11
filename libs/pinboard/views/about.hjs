@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    <p>Hi!, Welcome to {{ title }}</p>
 
     <a onclick="alert('To install the Pin It button, drag it to your bookmarks toolbar!.');return false;"
       href="javascript:void((function (d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','{{path}}?r='+Math.random()*99999999);d.body.appendChild(e)})(document));">Pin it</a>
