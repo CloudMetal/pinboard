@@ -3,11 +3,11 @@
  * Module dependencies
  */
 
+console.log('check 0');
+
 var Pin = require('./pin');
 var PinView = require('./pin-view');
 var ModalView = require('./modal-view');
-
-console.log('WORKING');
 
 // Setting options for the child window
 var options = [
@@ -22,9 +22,13 @@ var options = [
 ].join(',');
 
 var pin = new Pin();
+console.log('check 1');
 
 var modalView = new ModalView(pin);
+console.log('check 2');
+
 document.body.appendChild(modalView.el);
+console.log('modalView.el', modalView.el);
 document.querySelector("head").appendChild(modalView.link);
 
 var pinView = new PinView(pin);

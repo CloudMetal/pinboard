@@ -1,23 +1,30 @@
 #frog-pinterest-modal {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 100;
   height: 100%;
-  width: 100%;
   left: 0;
   position: fixed;
   top: 0;
-  z-index: 10000000000;
+  width: 100%;
+  z-index: 1000000000000000000000000000000000000000000;
 }
-
+#frog-pinterest-modal-mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000000000000000000000000000000;
+}
 #frog-pinterest-modal,
 #frog-pinterest-modal * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
 }
-
 #frog-pinterest-modal:before {
-  background: rgba(0,0,0,0.7);
+  background: rgba(54, 54, 70, 0.95);
   content: "";
   display: block;
   height: 100%;
@@ -25,87 +32,91 @@
   width: 100%;
   z-index: -1;
 }
-
-#frog-pinterest-modal h1 {
-  float: left;
-  display: block;
-  font-size: 20px;
-  padding: 0 84px 84px 0;
-}
-
 #frog-pinterest-modal header {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   border-bottom: 1px solid rgba(0,0,0,0.3);
+  box-sizing: border-box;
   overflow: hidden;
 }
-
-#frog-pinterest-modal h1 {
-  font-weight: 100;
-  color: #fff;
-  padding: 12px 13px 12px 25px;
-  font-size: 17px;
-  letter-spacing: 1px;
-  text-shadow: 0 1px 2px #000;
-}
-
-.media-item {
-  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.3);
-  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.3);
-  box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.3);
-}
-
-.media-control {
-  position: absolute;
-  background: #fff;
-  width: 100%;
-  bottom: 0;
-  padding: 9px 13px 13px 13px;
-}
-
-.media-control a {
-  position: absolute;
-  right: 0;
-}
-
-.media-name {
-  background: none;
-  border: none;
-  font-size: 21px;
-  color: #4b4b4b;
-  text-transform: capitalize;
-}
-
-.domainName{
-  color: #E71D1D;
-  display: block;
-  font-size: 15px;
-  margin-top: 1px;
-}
-
 #frog-pinterest-image-list {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: rgba(231, 231, 231, 1);
+  box-sizing: border-box;
+  line-height: 0;
   list-style: none;
-  margin: 0;
-  overflow: hidden;
-  overflow: visible;
-  padding: 15px;
-  line-height: 0
-}
-
-#frog-pinterest-image-list li {
-  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-  float: left;
+  margin: 65px auto 0 auto;
+  max-height: 580px;
+  overflow: scroll;
+  padding: 154px 0 0 0;
   position: relative;
+  width: 60%;
 }
-
+#frog-pinterest-image-list li.frog-pinterest-title-list {
+  background: rgba(54, 54, 70, 1);
+  height: 154px;
+  margin: 0 auto;
+  opacity: 1;
+  padding: 33px 0 31px 27px;
+  position: fixed;
+  top: 65px;
+  width: 60%;
+  z-index: 1000;
+}
+#frog-pinterest-image-list li.frog-pinterest-title-list:before {
+  background-image: url(http://ryanko.me/img/frog-icon.png);
+  content: "";
+  display: block;
+  height: 109px;
+  opacity: 0.13;
+  position: absolute;
+  right: 28px;
+  top: 17px;
+  width: 106px;
+}
+.frog-pinterest-title-list h1 {
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #fff;
+  cursor: auto;
+  display: block;
+  font-size: 17px;
+  letter-spacing: 3px;
+  line-height: 0;
+  margin: 0;
+  opacity: 1;
+  padding: 0;
+  text-align: left;
+  text-shadow: 0 0 0 #000;
+  width: 100%;
+}
+.frog-pinterest-title-list h2 {
+  color: #aaa;
+  cursor: auto;
+  display: block;
+  font-size: 14px;
+  height: auto;
+  letter-spacing: 1px;
+  margin: 0;
+  opacity: 1;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+#frog-pinterest-image-list li {
+  background: #fff;
+  cursor: pointer;
+  float: left;
+  opacity: 0.8;
+  position: relative;
+  width: 25%;
+}
+#frog-pinterest-image-list li:hover {
+  opacity: rgba(255,255,255,0.98);
+}
 #frog-pinterest-image-list li img {
   width: 100%;
 }
-
 .frog-pinterest-nano-button {
   border-left: 1px solid rgba(255,255,255,0.06);
   border-right: 1px solid rgba(255,255,255,0.06);
@@ -116,22 +127,20 @@
   padding: 28px 18px;
   text-shadow: 0 1px 2px #000;
 }
-
 #frog-pinterest-modal footer {
   left: 0;
-  padding: 0 20px 20px;
+  padding:0 20px 20px;
   position: absolute;
-  text-align:right;
+  text-align: right;
   top: 0;
   z-index: 100;
 }
-
 #frog-pinterest-modal footer a {
   background: #d4ecfb;
   border: 1px solid #78c3f1;
   color: #000;
   display: inline-block;
   margin-left: 20px;
-  padding: 4px 10px;
+  padding:4px 10px;
   text-decoration: none;
 }
