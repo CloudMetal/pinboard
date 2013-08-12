@@ -5,7 +5,7 @@
     <!-- <link rel='stylesheet' href='/pinboard/javascript/style.css' /> -->
     <link rel='stylesheet' href='/pinboard/javascript/build.css' />
   </head>
-  <body>
+  <body class="pinboard-index">
     <script src="http://packery.metafizzy.co/packery.pkgd.min.js" type="text/javascript"></script>
     <script src="/pinboard/javascript/build.js" type="text/javascript"></script>
     <script type="text/javascript">
