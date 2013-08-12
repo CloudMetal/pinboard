@@ -4,7 +4,13 @@
   </a>
   <div class="detail-container">
     <span data-text="description"></span>
-    <a data-href="url" class="site-link" data-text="url"></a>
+    <span class="site-link-label">Pinned from <a data-href="url" class="site-link" data-text="domain"></a></span>
+    <a class="icon-comment pin-comment-btn" data-js-action="showCommentInput" class="icon-comment"></a>
+    <div class="comment-box">
+      <textarea placeholder="Add Comment.."></textarea>
+      <a class="btn">Add</a>
+      <span class="or">or</span>
+      <a class="text-btn" data-js-action="hideCommentInput">Cancel</a>
+    </div>
   </div>
-
 </div>

@@ -5,7 +5,8 @@
   "dependencies": {
     "component/domify": "*",
     "component/reactive": "*",
-    "component/emitter": "*"
+    "component/emitter": "*",
+    "component/events": "*"
   },
   "scripts": ["index.js", "template.js"],
   "styles": ["styles.css"]
