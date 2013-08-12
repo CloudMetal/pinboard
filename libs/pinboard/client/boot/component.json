@@ -7,7 +7,7 @@
     "visionmedia/superagent": "*"
   },
   "scripts": ["index.js", "template.js"],
-  "styles": ["styles.css"],
+  "styles": ["styles.css", "../../public/stylesheets/font-awesome.css"],
   "local": [
     "pin",
     "pin-view"

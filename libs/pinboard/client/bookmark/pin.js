@@ -5,6 +5,7 @@ function Pin(thumbnailUrl) {
   this.url = window.location.href;
   this.thumbnailUrl = thumbnailUrl;
   this.description = description();
+  this.domain = domain();
 };
 
 function description() {
@@ -25,3 +26,9 @@ function description() {
   }
   return description || title;
 };
+
+function domain() {
+  var a = document.createElement('a');
+  a.href = window.location.href;
+  return a.hostname;
+}

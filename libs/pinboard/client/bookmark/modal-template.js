@@ -1,1 +1,1 @@
-module.exports = '<section id="frog-pinterest-modal">\n  <ul id="frog-pinterest-image-list">\n    {{!list}}\n  </ul>\n  <footer>\n    <a class="cancel-button" data-js-action="cancel" href="#">Cancel</a>\n  </footer>  \n</section>\n\n';
+module.exports = '<div id="frog-pinterest-modal-mask">\n  <section data-js-action="cancel" id="frog-pinterest-modal">\n    <ul id="frog-pinterest-image-list">\n      <li class="frog-pinterest-title-list"><h1>Select a thumbnail</h1></li>\n      {{!list}}\n    </ul>\n  </section>\n</div>';

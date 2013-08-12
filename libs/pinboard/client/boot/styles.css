@@ -1,15 +1,68 @@
 body, html {
-  background: rgba(87, 173, 48, 1);
-  color:#444;
+  color: #333;
   font-family: "Proxima Nova Light", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size:20px;
+  font-size: 20px;
   font-weight: 300;
   letter-spacing: 1px;
   margin: 0;
   padding: 0;
 }
+.pinboard-index {
+  background: #4e5664;
+}
+.pinboard-about {
+  background-image: url(/pinboard/images/about_promo_bg.jpg);
+  background-size: 100%;
+}
 
 #container {
   overflow: hidden;
   padding: 80px 90px;
+}
+
+#sample-pin {
+  background: #fff;
+  border-radius: 4px;
+  color: #333;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 0;
+  padding: 7px 38px 7px 11px;
+  position: relative;
+  text-decoration: none;
+}
+
+#sample-pin:before {
+  display: block;
+  position: absolute;
+  right: 12px;
+}
+
+#sample-pin:after {
+  border-left: 0px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #FFF;
+  content: '';
+  height: 0px;
+  left: 36px;
+  position: absolute;
+  width: 0px;
+}
+
+#sample-pin-label {
+  color: #FFF;
+  display: block;
+  font-size: 15px;
+  font-weight: 100;
+  margin-top: 25px;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+  width: 100%;
+}
+
+#pin-download-container {
+  margin-top: 260px;
+  text-align: center;
+  width: 100%;
 }

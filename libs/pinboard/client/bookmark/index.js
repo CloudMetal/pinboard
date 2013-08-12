@@ -7,8 +7,6 @@ var Pin = require('./pin');
 var PinView = require('./pin-view');
 var ModalView = require('./modal-view');
 
-console.log('WORKING');
-
 // Setting options for the child window
 var options = [
   'toolbars=0',
@@ -21,11 +19,34 @@ var options = [
   'toolbar=no'
 ].join(',');
 
+// Get current page information
+
+// function Pin(thumbnailUrl) {
+//    this.url = window.location.href;
+//    this.thumbnailUrl = thumbnailUrl;
+//    this.description = description();
+// }
 var pin = new Pin();
 
+// Assign page date to modal's model
+// Setup listeners as wel;
+
+// function ModalView(model) {
+//    this.model = model;
+//    this.link = createStyle();
+//    this.el = createEl();
+//    this.events = events(this.el, this);
+//    this.events.bind('click [data-js-action=select]', 'onSelect');
+//    this.events.bind('click [data-js-action=cancel]', 'onCancel');
+// }
 var modalView = new ModalView(pin);
+
+// Insert modal HTML to page
 document.body.appendChild(modalView.el);
+
+// Insert modal CSS to page
 document.querySelector("head").appendChild(modalView.link);
+
 
 var pinView = new PinView(pin);
 
