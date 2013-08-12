@@ -7,7 +7,8 @@
     "component/emitter": "*",
     "Nami-Doc/unique": "*",
     "component/domify": "*",
-    "visionmedia/minstache": "*"
+    "visionmedia/minstache": "*",
+    "visionmedia/superagent": "*"
   },
   "scripts": ["index.js", "pin.js", "modal-view.js", "modal-template.js", "list-item-template.js", "pin-view.js", "pin-template.js"],
   "styles": ["styles.css"],

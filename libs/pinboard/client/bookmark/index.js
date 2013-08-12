@@ -6,6 +6,7 @@
 var Pin = require('./pin');
 var PinView = require('./pin-view');
 var ModalView = require('./modal-view');
+var request = require('superagent');
 
 // Setting options for the child window
 var options = [
@@ -20,25 +21,9 @@ var options = [
 ].join(',');
 
 // Get current page information
-
-// function Pin(thumbnailUrl) {
-//    this.url = window.location.href;
-//    this.thumbnailUrl = thumbnailUrl;
-//    this.description = description();
-// }
 var pin = new Pin();
 
 // Assign page date to modal's model
-// Setup listeners as wel;
-
-// function ModalView(model) {
-//    this.model = model;
-//    this.link = createStyle();
-//    this.el = createEl();
-//    this.events = events(this.el, this);
-//    this.events.bind('click [data-js-action=select]', 'onSelect');
-//    this.events.bind('click [data-js-action=cancel]', 'onCancel');
-// }
 var modalView = new ModalView(pin);
 
 // Insert modal HTML to page
@@ -65,5 +50,17 @@ modalView.on('select', function () {
 pinView.on('save', function (e) {
   pinView.remove();
   childWindow.close();
-  console.log('pin', pin);
+  send();
 });
+
+function send() {
+  request
+    .post('http://localhost:3000/pinboard/api/v1/')
+    .send(pin)
+    .end(function (error, response) {
+      if (error) {
+        console.error(error);
+      }
+      console.log(response);
+    });
+}
