@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <!-- <link rel='stylesheet' href='/pinboard/javascript/style.css' /> -->
     <link rel='stylesheet' href='/pinboard/javascript/build.css' />
   </head>
   <body class="pinboard-index">

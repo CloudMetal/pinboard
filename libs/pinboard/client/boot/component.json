@@ -4,10 +4,12 @@
   "version": "0.0.1",
   "dependencies": {
     "component/domify": "*",
-    "visionmedia/superagent": "*"
+    "visionmedia/superagent": "*",
+    "timoxley/font-awesome": "*"
+
   },
   "scripts": ["index.js", "template.js"],
-  "styles": ["styles.css", "../../public/stylesheets/font-awesome.css"],
+  "styles": ["styles.css"],
   "local": [
     "pin",
     "pin-view"
