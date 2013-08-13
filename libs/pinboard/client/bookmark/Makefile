@@ -4,10 +4,40 @@ HTML = $(wildcard *.html)
 TEMPLATES = $(HTML:.html=.js)
 
 BUILD_DIR = ../../build
-NAME = bookmark
+BUILD_NAME = bookmark
+BUILD_FILE = $(addprefix $(BUILD_DIR)/, $(BUILD_NAME).js)
 
-build: components $(SRC) $(TEMPLATES) $(CSS)
-	component build -s $(NAME) -o $(BUILD_DIR) -n $(NAME)
+TMP_DIR = tmp
+BEGIN = ";(function(){\n"
+END = '\n\nrequire("bookmark");\n})();'
+BEGIN_FILE = $(addprefix $(TMP_DIR)/, begin.js)
+END_FILE = $(addprefix $(TMP_DIR)/, end.js)
+TMP_BUILD_FILE = $(addprefix $(TMP_DIR)/, $(BUILD_NAME).js)
+
+build: components tmp $(TEMPLATES) $(CSS)	
+
+tmp: buildtmp wrapbuild mvbuild
+
+mktmp:
+	@mkdir -p $(TMP_DIR)
+
+mkbegin: mktmp
+	@echo $(BEGIN) > $(BEGIN_FILE)
+
+mkend: mktmp
+	@echo $(END) > $(END_FILE)
+
+buildtmp: $(SRC)
+	component build -o $(BUILD_DIR) -n $(BUILD_NAME)
+
+wrapbuild: mktmp mkbegin mkend buildtmp
+	@cat $(BEGIN_FILE) $(BUILD_FILE) $(END_FILE) > $(TMP_BUILD_FILE)
+
+mvbuild: wrapbuild
+	@cp $(TMP_BUILD_FILE) $(BUILD_FILE)
+
+rmtmp:
+	@rm -rf $(TMP_DIR)
 
 components: component.json
 	component install
@@ -15,7 +45,7 @@ components: component.json
 %.js: %.html
 	component convert $<
 
-clean:
+clean: rmtmp
 	rm -fr components $(TEMPLATES) $(CSS) $(BUILD_DIR)/bookmark.js ../../build/bookmark.css
 
-.PHONY: clean lint
+.PHONY: clean lint tmp mvbuild rmtmp
