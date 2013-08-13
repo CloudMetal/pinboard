@@ -36,9 +36,13 @@
   }
   .pin-comment-btn {
     cursor: pointer;
-    font-size: 21px;
+    font-size: 19px;
     padding: 0 20px 18px 20px;
     text-align: left;
+  }
+  .icon-comment:before {
+    left: -8px;
+    position: relative;
   }
   .pin a {
     color: #CCC;
