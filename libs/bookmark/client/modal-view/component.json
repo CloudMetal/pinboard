@@ -1,0 +1,14 @@
+{
+  "name": "modal-view",
+  "description": "Bookmark modal view for choosing pin thumbnail images.",
+  "version": "0.0.1",
+  "dependencies": {
+    "component/events": "*",
+    "component/emitter": "*",
+    "Nami-Doc/unique": "*",
+    "component/domify": "*",
+    "visionmedia/minstache": "*"
+  },
+  "scripts": ["index.js", "template.js", "list-item-template.js"],
+  "styles": ["styles.css"]
+}

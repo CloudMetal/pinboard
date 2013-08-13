@@ -3,10 +3,12 @@
  * Module dependencies
  */
 
-var Pin = require('./pin');
-var PinView = require('./pin-view');
-var ModalView = require('./modal-view');
+var Pin = require('pin');
+var PinView = require('pin-view');
+var ModalView = require('modal-view');
 var request = require('superagent');
+
+var postPath = 'http://localhost:3000/pinboard/api/v1/';
 
 // Setting options for the child window
 var options = [
@@ -55,7 +57,7 @@ pinView.on('save', function (e) {
 
 function send() {
   request
-    .post('http://localhost:3000/pinboard/api/v1/')
+    .post(postPath)
     .send(pin)
     .end(function (error, response) {
       if (error) {
