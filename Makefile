@@ -1,5 +1,5 @@
 
-BOOKMARK = ./libs/bookmark
+BOOKMARK = ./libs/bookmarklet
 APP = ./libs/pinboard
 
 build: 

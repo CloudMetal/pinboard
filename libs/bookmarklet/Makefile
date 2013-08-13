@@ -5,7 +5,7 @@ CSS = $(wildcard ./client/**/*.css)
 TEMPLATES = $(HTML:.html=.js)
 
 BUILD_DIR = ../pinboard/build
-BUILD_NAME = bookmark
+BUILD_NAME = bookmarklet
 BUILD_FILE_JS = $(addprefix $(BUILD_DIR)/, $(BUILD_NAME).js)
 BUILD_FILE_CSS = $(addprefix $(BUILD_DIR)/, $(BUILD_NAME).css)
 
