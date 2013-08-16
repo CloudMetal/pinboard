@@ -65,7 +65,7 @@ function createEl() {
 function createStyle() {
   var link = document.createElement("link");
   link.id = "frog-pinterest-styles";
-  link.href = "http://localhost:3000/pinboard/stylesheets/bookmark.css";
+  link.href = "http://localhost:3000/pinboard/stylesheets/bookmarklet.css";
   link.type = "text/css";
   link.rel = "stylesheet";
   return link;

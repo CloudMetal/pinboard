@@ -19,7 +19,7 @@ var container = document.querySelector('#container');
 var pckry;
 
 request
-  .get('/pinboard/data/pins.json')
+  .get('/pinboard/api/v1/pin/')
   .end(function(res){
     createPins(res.body.pins);
   });
@@ -39,5 +39,24 @@ function createPins(pins) {
         pckry = new Packery(container, { itemSelector: '.pin' });
       }
     });
+
+    view.on('comment', function (view, commentText) {
+      addComment(view.model.id, commentText);
+    });
+
   });
+};
+
+function addComment(key, text) {
+  var id = key.split('!')[1];
+  var path = '/pinboard/api/v1/pin/' + id + '/comment/';
+  request
+    .post(path)
+    .send({ 'message': text })
+    .end(function (error, response) {
+      if (error) {
+        console.error(error);
+      }
+      console.log(response);
+    });
 };
