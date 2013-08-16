@@ -8,7 +8,7 @@ var PinView = require('pin-view');
 var ModalView = require('modal-view');
 var request = require('superagent');
 
-var postPath = 'http://localhost:3000/pinboard/api/v1/';
+var postPath = 'http://localhost:3000/pinboard/api/v1/pin/';
 
 // Setting options for the child window
 var options = [
@@ -65,4 +65,4 @@ function send() {
       }
       console.log(response);
     });
-}
+};
