@@ -1,0 +1,11 @@
+{
+  "name": "bookmarklet",
+  "description": "Pinboard bookmarklet",
+  "version": "0.0.1",
+  "local": [
+    "boot"
+  ],
+  "paths": [
+    "client"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "pin",
+  "description": "Bookmark pin model.",
+  "version": "0.0.1",
+  "dependencies": {},
+  "scripts": ["index.js"]
+}

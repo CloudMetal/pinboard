@@ -1,0 +1,15 @@
+{
+  "name": "boot",
+  "description": "Main app boot component",
+  "version": "0.0.1",
+  "dependencies": {
+    "visionmedia/superagent": "*"
+  },
+  "scripts": ["index.js"],
+  "styles": ["styles.css"],
+  "local": [
+    "pin",
+    "pin-view",
+    "modal-view"
+  ]
+}

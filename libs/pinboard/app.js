@@ -9,6 +9,8 @@ var http = require('http');
 var path = require('path');
 var app = module.exports = express();
 
+var bookmarkletPath = 'http://localhost:3000/pinboard/javascript/bookmarklet.js'
+
 app.set('views', __dirname + '/views');
 
 app.use('/api', cors());
@@ -23,7 +25,7 @@ app.get('/', function (request, response) {
 });
 
 app.get('/about', function (request, response) {
-  response.render('about.hjs', { title: 'About pinboard', path:'http://localhost:3000/pinboard/javascript/bookmark.js' });
+  response.render('about.hjs', { title: 'About pinboard', path:bookmarkletPath });
 });
 
 app.post('/api/v1/', cors(), express.bodyParser(), function (request, response) {

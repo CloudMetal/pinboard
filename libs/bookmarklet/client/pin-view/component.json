@@ -1,0 +1,12 @@
+{
+  "name": "pin-view",
+  "description": "Bookmark pin view.",
+  "version": "0.0.1",
+  "dependencies": {
+    "component/events": "*",
+    "component/emitter": "*",
+    "component/domify": "*",
+    "visionmedia/minstache": "*"
+  },
+  "scripts": ["index.js", "template.js"]
+}

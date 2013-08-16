@@ -8,7 +8,7 @@ var unique = require('unique');
 var domify = require('domify');
 var minstache = require('minstache');
 var Emitter = require('emitter');
-var modalTemplate = require('./modal-template');
+var template = require('./template');
 var listItemTemplate = require('./list-item-template');
 
 var minMediaWidth = 50;
@@ -59,7 +59,7 @@ function createEl() {
     return minstache(listItemTemplate, { src: src });
   });
 
-  return domify(minstache(modalTemplate, { list: list.join('') }));
+  return domify(minstache(template, { list: list.join('') }));
 };
 
 function createStyle() {
@@ -70,15 +70,3 @@ function createStyle() {
   link.rel = "stylesheet";
   return link;
 };
-
-// var cancle = delegate.bind(html, '[data-js-action=cancel]', 'click', function (e) {
-//   event.preventDefault();
-//   removeModal();
-// });
-
-// var select = delegate.bind(html, '[data-js-action=select]', 'click', function (e) {
-//   event.preventDefault();
-//   pin.thumbnailUrl = event.srcElement.src;
-//   removeModal();
-//   modalWindow.open(pin, send);
-// });

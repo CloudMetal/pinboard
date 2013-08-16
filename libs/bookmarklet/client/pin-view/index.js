@@ -1,8 +1,9 @@
+
 var Emitter = require('emitter');
 var domify = require('domify');
 var minstache = require('minstache');
 var events = require('events');
-var template = require('./pin-template');
+var template = require('./template');
 
 /**
  * Export `PinView`.
