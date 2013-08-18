@@ -70,12 +70,3 @@ PinView.prototype.onAddComment = function (e) {
   console.log('comment text', text);
   this.emit('comment', this, text);
 };
-
-// PinView.on('showCommentInput', function () {
-//   alert('hit');
-// });
-
-// PinView.prototype.onShowCommentInput = function (e) {
-//   e.preventDefault();
-//   this.emit('showCommentInput');
-// };
