@@ -44,12 +44,12 @@
     position: relative;
   }
   .pin a {
-    color: #CCC;
+    color: #969696;
     cursor: pointer;
     display: block;
   }
   .pin a:hover {
-    color: #CA2821;
+    color: #CA4E4E;
   }
   .pin textarea {
     border-bottom-left-radius: 4px;
@@ -116,4 +116,13 @@
   }
   .pin .comment-time {
     color: #CCC;
+  }
+  .pin-controls a {
+    float: left;
+  }
+  .pin.featured {
+    width: 612px !important;
+  }
+  .pin.featured .icon-star {
+    color: #CA4E4E;
   }
