@@ -26,6 +26,7 @@ PinView.prototype.render = function () {
 PinView.prototype.bind = function () {
   this.events = events(this.el, this);
   this.events.bind('click [data-js-action=save]', 'onSave');
+  this.events.bind('click [data-js-action=feature]', 'onFeature');
   this.events.bind('change textarea', 'onChangeDescription');
 };
 
@@ -38,6 +39,10 @@ PinView.prototype.onSave = function (e) {
   console.log('save!');
   this.emit('save');
 };
+
+PinView.prototype.onFeature = function (e) {
+  this.model.featuredStatus = e.target.checked;
+}
 
 PinView.prototype.onChangeDescription = function (e) {
   e.preventDefault();

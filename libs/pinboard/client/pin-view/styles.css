@@ -22,7 +22,7 @@
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 1px;
-    padding: 0 0 0 5px;
+    padding: 0;
     text-decoration: none;
     text-transform: uppercase;
     word-wrap: break-word;
@@ -44,12 +44,12 @@
     position: relative;
   }
   .pin a {
-    color: #969696;
+    color: #8387A0;
     cursor: pointer;
     display: block;
   }
   .pin a:hover {
-    color: #CA4E4E;
+    color: #d44d5b;
   }
   .pin textarea {
     border-bottom-left-radius: 4px;
@@ -124,5 +124,5 @@
     width: 612px !important;
   }
   .pin.featured .icon-star {
-    color: #CA4E4E;
+    color: #d44d5b;
   }

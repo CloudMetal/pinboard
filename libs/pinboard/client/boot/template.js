@@ -1,1 +1,1 @@
-module.exports = '<div id="container" class="js-packery"></div>\n';
+module.exports = '<!-- <select>\n  <option value="Board Red">Red</option>\n  <option value="Board Yellow">Yellow</option>\n  <option value="Board Navy">Navy</option>\n  <option value="Board Rainbow">Rainbow</option>\n</select> -->\n<div id="container" class="js-packery"></div>\n';

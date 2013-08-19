@@ -4,7 +4,7 @@
   </a>
   <div class="detail-container">
     <span data-text="description"></span>
-    <span class="site-link-label">Pinned from <a data-href="url" class="site-link" data-text="domain"></a></span>
+    <span class="site-link-label"><a data-href="url" class="site-link" data-text="domain"></a></span>
     <div class="pin-controls">
       <a class="icon-comment pin-comment-btn" data-js-action="showCommentInput" class="icon-comment">3</a>
       <a class="icon-star" data-js-action="featurePin"></a>
@@ -27,8 +27,8 @@
           <span class="comment-time">12/08/13</span>
         </li>
       </ul>
-      <textarea placeholder="Add Comment.."></textarea>
-      <a class="btn">Add</a>
+      <textarea class="commentField" placeholder="Add Comment.."></textarea>
+      <a class="btn" data-js-action="addComment">Add</a>
       <span class="or">or</span>
       <a class="text-btn" data-js-action="hideCommentInput">Cancel</a>
     </div>

@@ -20,8 +20,18 @@ module.exports = PinView;
  */
 
 function PinView(model) {
+
+
   this.el = domify(html);
   this.model = model;
+
+  console.log(this.model);
+
+  if (this.model.featuredStatus === true) {
+    this.el.className = 'pin featured';
+  } else {
+    this.el.className = 'pin';
+  }
 
 console.log('comments', this.model.comments);
 
@@ -30,16 +40,17 @@ console.log('comments', this.model.comments);
   this.thumbnail = this.el.querySelector('img');
   this.thumbnail.addEventListener('load', this.onloaded.bind(this));
 
-  this.commentField = this.el.querySelector('.comment');
+  this.commentField = this.el.querySelector('.commentField');
 
   this.commentsContainer = this.el.querySelector('.comment-box');
-  this.commentButton = this.el.querySelector('.pin-comment-btn');
+  this.pinControlContainer = this.el.querySelector('.pin-controls');
 
   this.events = events(this.el, this);
   this.events.bind('click [data-js-action=showCommentInput]', 'onShowCommentInput');
   this.events.bind('click [data-js-action=hideCommentInput]', 'onHideCommentInput');
   this.events.bind('click [data-js-action=addComment]', 'onAddComment');
   this.events.bind('click [data-js-action=featurePin]', 'onFeaturePin');
+
 };
 
 Emitter(PinView.prototype);
@@ -52,7 +63,7 @@ PinView.prototype.onShowCommentInput = function (e) {
   e.preventDefault();
   // Get the comment-box div
   this.commentsContainer.style.display = 'block';
-  this.commentButton.style.display = 'none';
+  this.pinControlContainer.style.display = 'none';
 
   // fix this to reload packery more elegantly
   pckry = new Packery(container, { itemSelector: '.pin' });
@@ -63,7 +74,7 @@ PinView.prototype.onHideCommentInput = function (e) {
 
   // Get the comment-box div
   this.commentsContainer.style.display = 'none';
-  this.commentButton.style.display = 'block';
+  this.pinControlContainer.style.display = 'block';
 
   // fix this to reload packery more elegantly
   pckry = new Packery(container, { itemSelector: '.pin' });

@@ -41,6 +41,7 @@ function createPins(pins) {
     });
 
     view.on('comment', function (view, commentText) {
+      console.log('---------- commentText is:' + commentText)
       addComment(view.model.id, commentText);
     });
 

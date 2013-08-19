@@ -29,7 +29,11 @@ Emitter(ModalView.prototype);
 
 ModalView.prototype.onSelect = function (e) {
   e.preventDefault();
+  // This is where the thumbnailUrl is created and assigned in the model
   this.model.thumbnailUrl = e.srcElement.src;
+
+  // Set featured status to default first. In pin-view index.js, if the featured checkbox UI is checked by the user, then we assign the featuredStatus to true.
+  this.model.featuredStatus = false;
   this.emit('select');
 };
 
