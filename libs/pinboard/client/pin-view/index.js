@@ -32,36 +32,10 @@ function PinView(model) {
     this.el.className = 'pin';
   }
 
-  var comments = this.model.comments;
   this.commentsList = this.el.querySelector('.comments');
   this.commentCountButton = this.el.querySelector('.pin-comment-btn');
-  
-  this.commentsList.innerHTML = '';
-  this.commentCountButton.innerHTML = '';
 
-  // Check if a comment exists
-  if (comments) {
-    // Reset the commentHTML
-    var commentHTML = '';
-
-    // Get comment count
-    var commentCount = this.model.comments.length;
-
-    // Show comment count on UI
-    this.commentCountButton.innerHTML = commentCount;
-
-    // For each comment, add it using the hardcoded template
-    for (var i=0; i<commentCount; i++) {
-      commentHTML += '<li class="comment">' +
-      '<a class="comment-author">Ryan Ko</a>' +
-      '<span class="comment-content">' + comments[i] + '</span>' +
-      '<span class="comment-time">13/05/89</span>' +
-      '</li>';
-    }
-
-    // load commentHTML
-    this.commentsList.innerHTML = commentHTML;
-  }
+  loadComments();
 
   reactive(this.el, this.model);
 
@@ -126,4 +100,35 @@ PinView.prototype.onFeaturePin = function (e) {
   setTimeout (function(){
     pckry = new Packery(container, { itemSelector: '.pin' });
   }, 300);
+}
+
+function loadComments() {
+  var comments = this.model.comments;
+
+  this.commentsList.innerHTML = '';
+  this.commentCountButton.innerHTML = '';
+
+  // Check if a comment exists
+  if (comments) {
+    // Reset the commentHTML
+    var commentHTML = '';
+
+    // Get comment count
+    var commentCount = this.model.comments.length;
+
+    // Show comment count on UI
+    this.commentCountButton.innerHTML = commentCount;
+
+    // For each comment, add it using the hardcoded template
+    for (var i=0; i<commentCount; i++) {
+      commentHTML += '<li class="comment">' +
+      '<a class="comment-author">Ryan Ko</a>' +
+      '<span class="comment-content">' + comments[i] + '</span>' +
+      '<span class="comment-time">13/05/89</span>' +
+      '</li>';
+    }
+
+    // load commentHTML
+    this.commentsList.innerHTML = commentHTML;
+  }
 }
