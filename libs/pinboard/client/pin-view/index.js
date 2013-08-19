@@ -32,10 +32,7 @@ function PinView(model) {
     this.el.className = 'pin';
   }
 
-  this.commentsList = this.el.querySelector('.comments');
-  this.commentCountButton = this.el.querySelector('.pin-comment-btn');
-
-  loadComments();
+  loadComments(this.el, this.model);
 
   reactive(this.el, this.model);
 
@@ -52,8 +49,42 @@ function PinView(model) {
   this.events.bind('click [data-js-action=hideCommentInput]', 'onHideCommentInput');
   this.events.bind('click [data-js-action=addComment]', 'onAddComment');
   this.events.bind('click [data-js-action=featurePin]', 'onFeaturePin');
-
 };
+
+function loadComments(element, model) {
+  this.el = element;
+  this.model = model
+
+  this.commentsList = this.el.querySelector('.comments');
+  this.commentCountButton = this.el.querySelector('.pin-comment-btn');
+
+  this.commentsList.innerHTML = '';
+  this.commentCountButton.innerHTML = '';
+
+  // Check if a comment exists
+  if (this.model.comments) {
+    // Reset the commentHTML
+    var commentHTML = '';
+
+    // Get comment count
+    var commentCount = this.model.comments.length;
+
+    // Show comment count on UI
+    this.commentCountButton.innerHTML = commentCount;
+
+    // For each comment, add it using the hardcoded template
+    for (var i=0; i<commentCount; i++) {
+      commentHTML += '<li class="comment">' +
+      '<a class="comment-author">Ryan Ko</a>' +
+      '<span class="comment-content">' + this.model.comments[i] + '</span>' +
+      '<span class="comment-time">13/05/89</span>' +
+      '</li>';
+    }
+
+    // load commentHTML
+    this.commentsList.innerHTML = commentHTML;
+  }
+}
 
 Emitter(PinView.prototype);
 
@@ -82,7 +113,7 @@ PinView.prototype.onHideCommentInput = function (e) {
   pckry = new Packery(container, { itemSelector: '.pin' });
 };
 
-PinView.prototype.onAddComment = function (e) {
+PinView.prototype.onAddComment = function (callback) {
   var text = this.commentField.value;
   console.log('comment text', text);
   this.emit('comment', this, text);
@@ -100,35 +131,4 @@ PinView.prototype.onFeaturePin = function (e) {
   setTimeout (function(){
     pckry = new Packery(container, { itemSelector: '.pin' });
   }, 300);
-}
-
-function loadComments() {
-  var comments = this.model.comments;
-
-  this.commentsList.innerHTML = '';
-  this.commentCountButton.innerHTML = '';
-
-  // Check if a comment exists
-  if (comments) {
-    // Reset the commentHTML
-    var commentHTML = '';
-
-    // Get comment count
-    var commentCount = this.model.comments.length;
-
-    // Show comment count on UI
-    this.commentCountButton.innerHTML = commentCount;
-
-    // For each comment, add it using the hardcoded template
-    for (var i=0; i<commentCount; i++) {
-      commentHTML += '<li class="comment">' +
-      '<a class="comment-author">Ryan Ko</a>' +
-      '<span class="comment-content">' + comments[i] + '</span>' +
-      '<span class="comment-time">13/05/89</span>' +
-      '</li>';
-    }
-
-    // load commentHTML
-    this.commentsList.innerHTML = commentHTML;
-  }
 }

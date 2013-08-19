@@ -9,6 +9,7 @@ var Pin = require('pin');
 var PinView = require('pin-view');
 var request = require('superagent');
 
+
 // inject template into the DOM
 document.body.appendChild(domify(html));
 
@@ -26,6 +27,7 @@ request
 
 function createPins(pins) {
   var imageCount = pins.length;
+  container.innerHTML = '';
 
   pins.forEach(function (pin) {
     var model = new Pin(pin);
@@ -41,7 +43,6 @@ function createPins(pins) {
     });
 
     view.on('comment', function (view, commentText) {
-      console.log('---------- commentText is:' + commentText)
       addComment(view.model.id, commentText);
     });
 
