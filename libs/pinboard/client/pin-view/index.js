@@ -25,15 +25,15 @@ function PinView(model) {
   this.el = domify(html);
   this.model = model;
 
-  console.log(this.model);
-
+  // Assigning featured style to featured pins only
   if (this.model.featuredStatus === true) {
     this.el.className = 'pin featured';
   } else {
     this.el.className = 'pin';
   }
 
-console.log('comments', this.model.comments);
+  console.log('comments: ', this.model.comment);
+
 
   reactive(this.el, this.model);
 
