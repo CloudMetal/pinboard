@@ -11,6 +11,7 @@ var Emitter = require('emitter');
 var template = require('./template');
 var listItemTemplate = require('./list-item-template');
 
+
 var minMediaWidth = 50;
 
 module.exports = ModalView;
@@ -34,8 +35,16 @@ ModalView.prototype.onSelect = function (e) {
 
   // Set featured status to default first. In pin-view index.js, if the featured checkbox UI is checked by the user, then we assign the featuredStatus to true.
   this.model.featuredStatus = false;
+
+  // Fill the boards by board count (via a selection element)
+
   this.emit('select');
 };
+
+
+
+ 
+
 
 ModalView.prototype.onCancel = function (e) {
   e.preventDefault();
