@@ -21,7 +21,6 @@ module.exports = PinView;
 
 function PinView(model) {
 
-
   this.el = domify(html);
   this.model = model;
 
@@ -73,7 +72,7 @@ function loadComments(element, model) {
     this.commentCountButton.innerHTML = commentCount;
 
     // For each comment, add it using the hardcoded template
-    for (var i=0; i<commentCount; i++) {
+    for (var i = 0; i < commentCount; i ++) {
       commentHTML += '<li class="comment">' +
       '<a class="comment-author">Ryan Ko</a>' +
       '<span class="comment-content">' + this.model.comments[i] + '</span>' +

@@ -27,6 +27,8 @@ boardSelector.addEventListener('change', function() {
 // Initialize Packery
 var pckry;
 
+// [TODO] Change this so user don't need to start with board 1
+// Load board 1 by default
 loadBoard(1);
 
 // Client side request library for retrieving data from db
@@ -78,9 +80,9 @@ function loadPinBoards(pins, selectorEl, selectedBoardId) {
 // Check of a value exists in an array
 function existInArray(array, id) {
   for(var i = 0; i < array.length; i++ ) {
-      if (array[i] == id) {
-        return true;
-      }
+    if (array[i] == id) {
+      return true;
+    }
   }
   return false;
 }

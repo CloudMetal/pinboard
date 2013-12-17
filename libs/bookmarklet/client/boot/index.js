@@ -40,6 +40,7 @@ var pinView = new PinView(pin);
 
 var childWindow;
 
+// emit listeners
 modalView.on('cancel', function () {
   modalView.remove();
 });

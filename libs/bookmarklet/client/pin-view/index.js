@@ -90,7 +90,6 @@ PinView.prototype.unbind = function () {
 PinView.prototype.onSave = function (e) {
   e.preventDefault();
   console.log('save!');
-
   this.emit('save');
 };
 
@@ -100,7 +99,6 @@ PinView.prototype.onFeature = function (e) {
 
 PinView.prototype.onChangeBoard = function (e) {
   e.preventDefault();
-  // alert('hit!' + e.target.value);
   this.model.board = e.target.value;
 }
 
