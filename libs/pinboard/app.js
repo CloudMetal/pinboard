@@ -15,6 +15,8 @@ var count = 0;
 
 var bookmarkletPath = 'http://localhost:3000/pinboard/javascript/bookmarklet.js'
 
+var bookmarkletPath = 'http://localhost:3000/pinboard/javascript/bookmarklet.js'
+
 app.set('views', __dirname + '/views');
 
 app.use('/api', cors());
@@ -52,13 +54,15 @@ app.get('/api/v1/pin/:id', function (request, response) {
 
 app.post('/api/v1/pin/:id/comment', function (request, response) {
   var key = 'pin!' + request.params.id;
-console.log('key', key);
+
   var comment = request.body;
-console.log('comment', comment);
+
+  console.log('comment', comment);
+
   getPin(key, function (data) {
     data.comments = data.comments || [];
     data.comments.push(comment.message);
-console.log('data', data);
+
     db.put(key, data, function (err) {
       if (err) return console.log('Ooops!', err);
       response.send(200, 'New comment added to pin!');

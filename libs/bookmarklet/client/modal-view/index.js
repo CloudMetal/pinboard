@@ -29,7 +29,13 @@ Emitter(ModalView.prototype);
 
 ModalView.prototype.onSelect = function (e) {
   e.preventDefault();
+  // This is where the thumbnailUrl is created and assigned in the model
   this.model.thumbnailUrl = e.srcElement.src;
+
+  // Set featured status to default first. In pin-view index.js, if the featured checkbox UI is checked by the user, then we assign the featuredStatus to true.
+  this.model.featuredStatus = false;
+
+  // Fill the boards by board count (via a selection element)
   this.emit('select');
 };
 
@@ -65,7 +71,7 @@ function createEl() {
 function createStyle() {
   var link = document.createElement("link");
   link.id = "frog-pinterest-styles";
-  link.href = "http://localhost:3000/pinboard/stylesheets/bookmark.css";
+  link.href = "http://localhost:3000/pinboard/stylesheets/bookmarklet.css";
   link.type = "text/css";
   link.rel = "stylesheet";
   return link;

@@ -6,7 +6,9 @@
     "component/events": "*",
     "component/emitter": "*",
     "component/domify": "*",
-    "visionmedia/minstache": "*"
+    "visionmedia/minstache": "*",
+    "visionmedia/superagent": "*",
+    "component/reactive": "*"
   },
   "scripts": ["index.js", "template.js"]
 }

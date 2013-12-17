@@ -1,9 +1,8 @@
 
 module.exports = Pin;
 
-function Pin(thumbnailUrl) {
+function Pin() {
   this.url = window.location.href;
-  this.thumbnailUrl = thumbnailUrl;
   this.description = description();
   this.domain = domain();
 };

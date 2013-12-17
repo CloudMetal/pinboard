@@ -5,7 +5,8 @@
   "dependencies": {
     "component/domify": "*",
     "visionmedia/superagent": "*",
-    "timoxley/font-awesome": "*"
+    "timoxley/font-awesome": "*",
+    "visionmedia/minstache": "*"
 
   },
   "scripts": ["index.js", "template.js"],

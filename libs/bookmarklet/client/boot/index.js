@@ -8,6 +8,7 @@ var PinView = require('pin-view');
 var ModalView = require('modal-view');
 var request = require('superagent');
 
+// Setup path for database
 var postPath = 'http://localhost:3000/pinboard/api/v1/pin/';
 
 // Setting options for the child window
@@ -22,7 +23,7 @@ var options = [
   'toolbar=no'
 ].join(',');
 
-// Get current page information
+// Get current page information (including getting domain, page description and page URL)
 var pin = new Pin();
 
 // Assign page date to modal's model
@@ -34,11 +35,12 @@ document.body.appendChild(modalView.el);
 // Insert modal CSS to page
 document.querySelector("head").appendChild(modalView.link);
 
-
+// Load board selection dropdown and setup UI listeners
 var pinView = new PinView(pin);
 
 var childWindow;
 
+// emit listeners
 modalView.on('cancel', function () {
   modalView.remove();
 });

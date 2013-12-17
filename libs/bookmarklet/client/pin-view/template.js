@@ -1,1 +1,1 @@
-module.exports = '<section id="frog-pinterest-child-modal">\n  <span>Image from: {{url}}</span>\n  <img src="{{thumbnailUrl}}"/>\n  <textarea>{{description}}</textarea>\n  <a href="#" data-js-action="save">Pin it!</a>\n</section>';
+module.exports = '<section id="frog-pinterest-child-modal">\n  <span>Image from: {{url}}</span>\n  <img src="{{thumbnailUrl}}"/>\n  <textarea>{{description}}</textarea>\n  <input data-js-action="feature" type="checkbox">\n  <select id="boardSelection"></select>\n  <a href="#" data-js-action="save">Pin it!</a>\n</section>';

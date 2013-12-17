@@ -1,1 +1,1 @@
-module.exports = '<div id="container" class="js-packery"></div>\n';
+module.exports = '<div id="boardControl">\n	<select id="boardSelection"></select>\n</div>\n<div id="container" class="js-packery">\n</div>\n';
