@@ -11,7 +11,6 @@ var Emitter = require('emitter');
 var template = require('./template');
 var listItemTemplate = require('./list-item-template');
 
-
 var minMediaWidth = 50;
 
 module.exports = ModalView;
@@ -37,14 +36,8 @@ ModalView.prototype.onSelect = function (e) {
   this.model.featuredStatus = false;
 
   // Fill the boards by board count (via a selection element)
-
   this.emit('select');
 };
-
-
-
- 
-
 
 ModalView.prototype.onCancel = function (e) {
   e.preventDefault();

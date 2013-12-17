@@ -24,7 +24,8 @@ function loadPinBoards(pins, selectorEl) {
 
   // List for storing unqiue boards
   // This is used to fill the dropdown options of board selection
-  var selectionQueList = [];
+  // [TODO] remove pre-determined boards once board database is setup
+  var selectionQueList = ["1", "2", "3", "4", "5"];
 
   // For each pin, 
   pins.forEach(function (pin) {
