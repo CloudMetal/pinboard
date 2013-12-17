@@ -10,6 +10,8 @@ var PinView = require('pin-view');
 var request = require('superagent');
 var minstache = require('minstache');
 
+var selectionQueList;
+
 // inject template into the DOM
 document.body.appendChild(domify(html));
 
@@ -17,47 +19,64 @@ document.body.appendChild(domify(html));
 var container = document.querySelector('#container');
 var boardSelector = document.querySelector('#boardSelection');
 
+boardSelector.addEventListener('change', function() { 
+  var selectedBoardId = boardSelector.options[boardSelector.selectedIndex].text
+  loadBoard(selectedBoardId);
+});
+
 // Initialize Packery
 var pckry;
 
+loadBoard(1);
+
 // Client side request library for retrieving data from db
-request
+function loadBoard(boardId) {
+  request
   .get('/pinboard/api/v1/pin/')
   .end(function(res){
     // Getting a list of pins from the database
-    createPins(res.body.pins, 1);
+    createPins(res.body.pins, boardId);
     loadPinBoards(res.body.pins, boardSelector);
   });
+}
 
+// Checking the number of unique boards from the current pins
+// [TODO] Change this to load from a database of boards instead
 function loadPinBoards(pins, selectorEl) {
-    var pinCount = pins.length;
+  selectionQueList = [];
+  pins.forEach(function (pin) {
+      // Check for unique boards
+      if (existInArray(selectionQueList, pin.board) == false) {
+        // Keep a array record of unique boards
+        selectionQueList.push(pin.board);
+      }
+  });
 
-    var selectionQueList = [];
+  // Clear all the options in the existing selection
+  var length = selectorEl.options.length;
+  for (i = 0; i < length; i++) {
+    selectorEl.options[i] = null;
+  }
 
-    pins.forEach(function (pin) {
-        // Check for unique boards
-        if (existInArray(selectionQueList, pin.board) == false) {
-          // Keep a array record of unique boards
-          selectionQueList.push(pin.board);
-        }
-    });
-
-    // Create a selection with all the available boards
-    for (var i = 0; i < selectionQueList.length; i++) {
-        var option = document.createElement("option");
-        option.text = selectionQueList[i];
-        selectorEl.add(option, null);
-    }
-
+  // Create an option for all the available boards
+  for (var i = 0; i < selectionQueList.length; i++) {
+    // Creating a new opton
+    var option = document.createElement("option");
+    option.text = selectionQueList[i];
+    // Adding the option
+    selectorEl.add(option, null);
+  }
+  console.log("selectionQueList: " + selectionQueList);
 };
 
+// Check of a value exists in an array
 function existInArray(array, id) {
-    for(var i = 0; i < array.length; i++ ) {
-        if (array[i] == id) {
-          return true;
-        }
-    }
-    return false;
+  for(var i = 0; i < array.length; i++ ) {
+      if (array[i] == id) {
+        return true;
+      }
+  }
+  return false;
 }
 
 function createPins(pins, boardId) {
