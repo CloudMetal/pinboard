@@ -31,6 +31,13 @@ loadBoard(1);
 
 // Client side request library for retrieving data from db
 function loadBoard(boardId) {
+
+  // Clear all the options in the existing selection
+  var length = boardSelector.options.length;
+  for (var i = 0; i < length; i++) {
+    boardSelector.options[i] = null;
+  }
+
   request
   .get('/pinboard/api/v1/pin/')
   .end(function(res){
@@ -51,12 +58,6 @@ function loadPinBoards(pins, selectorEl) {
         selectionQueList.push(pin.board);
       }
   });
-
-  // Clear all the options in the existing selection
-  var length = selectorEl.options.length;
-  for (i = 0; i < length; i++) {
-    selectorEl.options[i] = null;
-  }
 
   // Create an option for all the available boards
   for (var i = 0; i < selectionQueList.length; i++) {
