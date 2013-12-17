@@ -75,7 +75,7 @@
     display: inline-block;
     font-size: 12px;
     font-weight: 100;
-    margin-left: 144px;
+    margin-left: 138px;
     padding: 5px 9px;
   }
   .pin .btn:hover {
@@ -95,8 +95,9 @@
     list-style: none;
     margin: 0;
     max-height: 219px;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 0;
+    overflow-x: hidden;
   }
   .pin li.comment {
     border-top: 1px solid rgba(0,0,0,0.1);
@@ -123,7 +124,7 @@
     float: left;
   }
   .pin.featured {
-    width: 612px !important;
+    width: 605px !important;
   }
   .pin.featured .icon-star {
     color: #d44d5b;

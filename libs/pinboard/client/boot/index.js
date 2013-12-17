@@ -63,7 +63,7 @@ function loadPinBoards(pins, selectorEl, selectedBoardId) {
     option.text = selectionQueList[i];
 
     // Set the selected option to be true
-    if ((i + 1) == selectedBoardId) {
+    if (i+1 == selectedBoardId) {
       option.selected = true;
     } else {
       option.selected = false;
