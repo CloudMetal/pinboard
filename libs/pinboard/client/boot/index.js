@@ -20,7 +20,7 @@ var container = document.querySelector('#container');
 var boardSelector = document.querySelector('#boardSelection');
 
 boardSelector.addEventListener('change', function() { 
-  var selectedBoardId = boardSelector.options[boardSelector.selectedIndex].text
+  var selectedBoardId = boardSelector.options[boardSelector.selectedIndex].text;
   loadBoard(selectedBoardId);
 });
 
@@ -33,23 +33,20 @@ loadBoard(1);
 function loadBoard(boardId) {
 
   // Clear all the options in the existing selection
-  var length = boardSelector.options.length;
-  for (var i = 0; i < length; i++) {
-    boardSelector.options[i] = null;
-  }
+  boardSelector.innerHTML = "";
 
   request
   .get('/pinboard/api/v1/pin/')
   .end(function(res){
     // Getting a list of pins from the database
     createPins(res.body.pins, boardId);
-    loadPinBoards(res.body.pins, boardSelector);
+    loadPinBoards(res.body.pins, boardSelector, boardId);
   });
 }
 
 // Checking the number of unique boards from the current pins
 // [TODO] Change this to load from a database of boards instead
-function loadPinBoards(pins, selectorEl) {
+function loadPinBoards(pins, selectorEl, selectedBoardId) {
   selectionQueList = [];
   pins.forEach(function (pin) {
       // Check for unique boards
@@ -64,6 +61,14 @@ function loadPinBoards(pins, selectorEl) {
     // Creating a new opton
     var option = document.createElement("option");
     option.text = selectionQueList[i];
+
+    // Set the selected option to be true
+    if ((i + 1) == selectedBoardId) {
+      option.selected = true;
+    } else {
+      option.selected = false;
+    }
+    
     // Adding the option
     selectorEl.add(option, null);
   }
